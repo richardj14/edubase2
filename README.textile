@@ -1,0 +1,5 @@
+Retrieves entirety of Edubase2 database
+
+Every school is identified by a Unique Reference Number (URN). The table 'edubase2' contains only this number and is populated by doing a search for all establishments (open/closed/whatever type). The original design had all data in one table, but ScraperWiki's JSON interface threw a hissy fit. It is now divided up into separate tables, all using the URN as a primary key. This URN relates to other data, e.g. Ofsted, performance tables.
+
+You may find that some places use a "DfE number" or an "LAESTAB". This is either a 3 digit, 4 digit or 7 digit number, depending what you're looking at. The 7 digit number is a concatenation of the 3 digit local authority (LA/LEA) number and a 4 digit establishment (ESTAB) number. The 3 digit LA number relates to the LA number in https://scraperwiki.com/scrapers/local_authority_codes/ and in theory is being replaced by a GSS number (see that scraper for details). In theory the LAESTAB number is unique, but I suspect there may be some reassigning going on.
